@@ -1,0 +1,119 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #646464;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+header {
+    background-color: #2b2b2b;
+    color: #ebebeb;
+    text-align: center;
+    padding: 40px 20px;
+    border: 4px solid #1c1c1c;
+    width: 100vh;
+    min-width: 720px;
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+#card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 720px;
+    margin: 20px 0;
+}
+
+#poke {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: #eedfeb;
+    border-radius: 10px;
+}
+
+#pokemon {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+#pokemon div:hover {
+    background-color: #fad5e8;
+    transform: scale(1.03);
+}
+
+#pokemon div {
+    text-align: center;
+    padding: 10px;
+    background-color: #eedfeb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #0000001a;
+}
+
+#pokemon img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+#pokemon div p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #2b2b2b;
+    color: #ebebeb;
+    text-align: center;
+    padding: 40px 20px;
+    border: 4px solid #1c1c1c;
+    width: 100vh;
+    min-width: 720px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+button {
+    color: #fff;
+    border: none;
+    margin: 5px;
+    background-color: #333;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #4a4a4a;
+    transform: scale(1.05);
+}
