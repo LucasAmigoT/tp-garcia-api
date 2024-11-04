@@ -80,14 +80,14 @@ function mostrarPokemon(pokemon) {
     let nomeP = document.createElement('p');
     nomeP.textContent = pokemon.name;
 
-    let skill = document.createElement('button');
-    skill.textContent = 'Skills';
-    skill.addEventListener('click', () => {
-        botaoSkill (pokemon.name);
-    })
     let status = document.createElement('button');
     status.textContent = 'Status';
     status.addEventListener('click', () => {
+        botaoSkill (pokemon.name);
+    })
+    let descricao = document.createElement('button');
+    descricao.textContent = 'Descrição';
+    descricao.addEventListener('click', () => {
         botaoStatus(pokemon.name);
     })
     let audio = document.createElement('button');
@@ -101,8 +101,8 @@ function mostrarPokemon(pokemon) {
     grito.play()
     divMostrar.appendChild(img);
     divMostrar.appendChild(nomeP);
-    divMostrar.appendChild(skill);
     divMostrar.appendChild(status);
+    divMostrar.appendChild(descricao);
     divMostrar.appendChild(audio);
 }
 
