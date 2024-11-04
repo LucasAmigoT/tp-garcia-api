@@ -1,11 +1,14 @@
 body {
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    /* height: 100vh;
+    width: 100vh; */
     margin: 0;
     padding: 20px;
-    background-color: #646464;
+    background-image: url('https://assets.promptbase.com/DALLE_IMAGES%2Fal4jVqSr4AaTxaaTG8IeLgBz3US2%2Fresized%2F1700421599298s_800x800.webp?alt=media&token=31766b0f-abf8-4438-a349-17470205a121');
     font-family: Verdana, Tahoma, sans-serif;
 }
 
@@ -47,18 +50,19 @@ header p {
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
-    margin-top: 5px;
-    padding: 10px;
     text-align: center;
     background-color: #eedfeb;
-    border-radius: 10px;
+    border-radius: 30px;
+    padding: 10px;
 }
+
 
 #pokemon {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     padding: 20px;
+    width: 100vh;
 }
 
 #pokemon div:hover {
@@ -69,6 +73,7 @@ header p {
 #pokemon div {
     text-align: center;
     padding: 10px;
+    border: solid #1c1c1c;
     background-color: #eedfeb;
     border-radius: 8px;
     box-shadow: 0 4px 8px #0000001a;
@@ -116,4 +121,30 @@ button {
 button:hover {
     background-color: #4a4a4a;
     transform: scale(1.05);
+}
+
+select {
+    margin: 20px;
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #eedfeb;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+    
+select:focus {
+    border-color: #333;
+    outline: none;
+}
+
+#descricao {
+    color: white;
+    width: 500px;
+    background-color: #1c1c1c;
+    border-radius: 30px;
 }
