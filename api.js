@@ -1,30 +1,40 @@
 
-// --- teste realizado para buscar o link da api correto ---
+// --------    testes realizados para buscar o link da api correto ---------
 
 // function pokemonsFotos(obj) {
 //     console.log(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${obj.id}.png`)
 // }
 
-function pesquisaId(nome, divs) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${nome}/`)
-        .then(resp => resp.json())
-        .then(obj => {
-            // comola a imagem do pokemon no card
-            // pokemonsFotos(obj.id)
-            let img = document.createElement('img');
-            img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${obj.id}.png`;
+
+
+// --------    primeira função criada para buscar os pokemons  -------
+// function pesquisaId(nome, divs) {
+//     fetch(`https://pokeapi.co/api/v2/pokemon/${nome}/`)
+//         .then(resp => resp.json())
+//         .then(obj => {
+//             // comola a imagem do pokemon no card
+//             // pokemonsFotos(obj.id)
+//             let img = document.createElement('img');
+//             img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${obj.id}.png`;
         
             
-            // acrescenta o nome do pokemon
-            let nomePoke = document.createElement('p');
-            nomePoke.textContent = nome;
+//             // acrescenta o nome do pokemon
+//             let nomePoke = document.createElement('p');
+//             nomePoke.textContent = nome;
 
-            divs.appendChild(img);
-            divs.appendChild(nomePoke);
+//             divs.appendChild(img);
+//             divs.appendChild(nomePoke);
 
-        })
-}
+//         })
+// }
 
+
+
+
+
+
+
+// faz a requisição dos pokemons para API e adiciona o nome deles no option junto com o value:nome. Perenchendo o select com o nome de todos os pokemons. Limite de 250 nomes.
 (function () {
     fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=250`)
         .then(resp => resp.json())
@@ -45,6 +55,7 @@ function pesquisaId(nome, divs) {
     form.addEventListener("submit", function (evt) {
         // -- previne o comportamento padrao do formulario
         evt.preventDefault();
+
         let nomePokemon = document.querySelector('#buscarPokemon').value;
         fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
         .then(resposta => resposta.json())
@@ -113,7 +124,6 @@ function criarCardPokemon (pokemon) {
 
     let divMostrar = document.createElement('div');
     divCard.appendChild(divMostrar);
-    divMostrar.id = "mostrar";
 
     let img = document.createElement('img');
     img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
@@ -125,12 +135,17 @@ function criarCardPokemon (pokemon) {
     button.textContent = 'remover';
 
     divMostrar.addEventListener('click', evt => {
-        console.log(evt);
+        // console.log(evt);
         if (evt.target === button) {
+            // busca o poquemon salvo no localstorage, retornando uma string e depois o .parce converte em um array
             let guardados = JSON.parse(localStorage.getItem("pokemons"));
+            // encontra a posição indice do nome do pokemon
             let index = guardados.indexOf(pokemon.name);
+            // remove o item index do array guardados
             guardados.splice(index, 1);
+            // .stringify transforma o array em string e o .setItem salva novamento no localStorage
             localStorage.setItem("pokemons", JSON.stringify(guardados));
+            // apaga a div da pagina
             divMostrar.remove();
         } else {
             fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
@@ -146,7 +161,9 @@ function criarCardPokemon (pokemon) {
     divMostrar.appendChild(button);
 }
 
+//  verifica se a lista está vazia.
 function listarGuardados() {
+    // busca os dados que estão armazenados no localStorage
     let guardados = JSON.parse(localStorage.getItem("pokemons"));
     if(guardados) {
         guardados.forEach(guardado => {
