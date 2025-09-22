@@ -114,7 +114,7 @@ function mostrarPokemon(pokemon) {
     divMostrar.appendChild(nomeP);
     divMostrar.appendChild(status);
     divMostrar.appendChild(descricao);
-    divMostrar.appendChild(audio);
+    // divMostrar.appendChild(audio);
 }
 
 function criarCardPokemon (pokemon) {
@@ -263,3 +263,4 @@ function botaoAudio (id) {
     grito.play()
 
 }
+
