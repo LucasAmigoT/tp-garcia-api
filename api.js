@@ -107,7 +107,7 @@ function mostrarPokemon(pokemon) {
         botaoAudio(pokemon.id);
     })
 
-    let grito = new Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`);
+    // let grito = new Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`);
 
     grito.play()
     divMostrar.appendChild(img);
@@ -261,4 +261,5 @@ function botaoAudio (id) {
     let grito = new Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`);
 
     grito.play()
+
 }
